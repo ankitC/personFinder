@@ -92,7 +92,7 @@ JNIEXPORT void JNICALL Java_MainActivity_detector(JNIEnv *env, jobject obj,
 	// Now create a new Eigenfaces Recognizer
 	//
 	Ptr<FaceRecognizer> model1 = createEigenFaceRecognizer(0, 3.0);
-	model1->load("eigenfaces_at.yml");
+	model1->load("/mnt/sdcard/external_sd/hyraxv2/eigenfaces_at.yml");
 	CvSize size = cvSize(128, 128);
 	printf("Detecting faces....\n");
 	Mat tempFace;
