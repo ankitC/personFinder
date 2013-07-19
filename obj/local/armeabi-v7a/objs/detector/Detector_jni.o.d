@@ -60,7 +60,8 @@ obj/local/armeabi-v7a/objs/detector/Detector_jni.o: jni/Detector_jni.cpp \
  D:/\Android\\Projects\\OpenCV\\OpenCV-2.4.5-android-sdk\\sdk\\native\\jni\\/include/opencv2/highgui/highgui.hpp \
  D:/\Android\\Projects\\OpenCV\\OpenCV-2.4.5-android-sdk\\sdk\\native\\jni\\/include/opencv2/highgui/highgui_c.h \
  C:/NVPACK/android-ndk-r8e/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream \
- C:/NVPACK/android-ndk-r8e/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream
+ C:/NVPACK/android-ndk-r8e/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream \
+ C:/NVPACK/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h
 
 C:/NVPACK/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/jni.h:
 
@@ -185,3 +186,5 @@ D:/\Android\\Projects\\OpenCV\\OpenCV-2.4.5-android-sdk\\sdk\\native\\jni\\/incl
 C:/NVPACK/android-ndk-r8e/sources/cxx-stl/gnu-libstdc++/4.6/include/iostream:
 
 C:/NVPACK/android-ndk-r8e/sources/cxx-stl/gnu-libstdc++/4.6/include/fstream:
+
+C:/NVPACK/android-ndk-r8e/platforms/android-8/arch-arm/usr/include/android/log.h:

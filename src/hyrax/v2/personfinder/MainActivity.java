@@ -26,7 +26,10 @@ public class MainActivity extends Activity {
 			case LoaderCallbackInterface.SUCCESS:
 			{
 				Log.i(LOG_TAG, "OpenCV loaded successfully");
+				System.loadLibrary("opencv_java");
 				System.loadLibrary("detector");
+				Log.i(LOG_TAG, "library loaded");
+				
 			} break;
 			default:
 			{
@@ -40,7 +43,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		System.loadLibrary("opencv_java");
+		System.loadLibrary("detector");
 		File files = new File("/mnt/sdcard/external_sd/hyraxv2/testImages/");
 		File[] list = files.listFiles();
 
@@ -54,12 +58,17 @@ public class MainActivity extends Activity {
 		String tempNames=new String(Arrays.toString(list));
 		tempNames=tempNames.replace("[", "");
 		tempNames=tempNames.replace("]", "");
+		
 		String[] fileNames=tempNames.split(",");
+		for(int i=1; i<fileNames.length;i++){
+			fileNames[i]=fileNames[i].replaceFirst(" ", "");
+		}
 		CSVWriter writer = null;
 		try 
 		{
 			writer = new CSVWriter(new FileWriter("/mnt/sdcard/external_sd/hyraxv2/testImages.csv"),'\n');
 			writer.writeNext(fileNames);
+			
 			writer.close();
 		} 
 
@@ -68,7 +77,15 @@ public class MainActivity extends Activity {
 			Toast p= Toast.makeText(getApplicationContext(),"Could not write to the SD", Toast.LENGTH_LONG);
 			p.show();
 		}
+		Toast a= Toast.makeText(getApplicationContext(),"Starting detection", Toast.LENGTH_LONG);
+		a.show();
+		
 		detector(1);
+		
+		Toast c= Toast.makeText(getApplicationContext(),"Finished", Toast.LENGTH_LONG);
+		c.show();
+		
+		
 	}
 	
 	@Override
@@ -77,5 +94,6 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
 	private static native void detector(int sampleLabel);
 }
